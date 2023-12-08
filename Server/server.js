@@ -1,9 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const env = require("dotenv");
+env.config()
 
 const app = express();
 const port = process.env.PORT || 5000;
+
 
 app.use(cors(
   {
@@ -15,7 +18,7 @@ app.use(cors(
 ));
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://prajakta:praju%40123@cluster0.jz314qu.mongodb.net/todo?retryWrites=true&w=majority');
+mongoose.connect(process.env.Mongo_url);
 const connection = mongoose.connection;
 connection.once('open', () => {
   console.log('MongoDB connection established successfully');
