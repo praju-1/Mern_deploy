@@ -21,6 +21,10 @@ connection.once('open', () => {
   console.log('MongoDB connection established successfully');
 });
 
+app.get('/', (req, res)=>{
+  res.json("hello")
+})
+
 const todoRoutes = require('./routes/todoRoutes');
 app.use('/todos', todoRoutes);
 
