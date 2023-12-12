@@ -4,6 +4,8 @@ import axios from 'axios';
 function App() {
   const [todos, setTodos] = useState([]);
   const [text, setText] = useState('');
+  axios.defaults.withCredentials = true;
+
 
   useEffect(() => {
     axios.get('http://localhost:5000/todos/')
@@ -12,7 +14,8 @@ function App() {
   }, []);
 
   const addTodo = () => {
-    axios.post('http://localhost:5000/todos/add', { text })
+    axios.post('https://mern-deploy-fawn.vercel.app/', {text})
+    // axios.post('http://localhost:5000/todos/add', { text })
       .then(response => {
         console.log(response.data);
         setTodos([...todos, { text, completed: false }]);
