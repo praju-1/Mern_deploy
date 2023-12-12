@@ -8,7 +8,7 @@ function App() {
 
 
   useEffect(() => {
-    axios.get('http://localhost:5000/todos/')
+    axios.get('https://mern-deploy-fawn.vercel.app/todos/')
       .then(response => setTodos(response.data))
       .catch(err => console.log(`Error: ${err}`));
   }, []);
