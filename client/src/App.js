@@ -14,7 +14,7 @@ function App() {
   }, []);
 
   const addTodo = () => {
-    axios.post('https://mern-deploy-fawn.vercel.app/', {text})
+    axios.post('https://mern-deploy-fawn.vercel.app/todos/add', {text})
     // axios.post('http://localhost:5000/todos/add', { text })
       .then(response => {
         console.log(response.data);
