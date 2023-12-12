@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000;
 
 app.use(cors(
   {
-    origin:['https://mern-deploy-fawn.vercel.app/'],
+    origin:['https://mern-deploy-frontend-gules.vercel.app/'],
     methods:['POST', 'GET'],
     credentials:true
 
